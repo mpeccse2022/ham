@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CURRENT STATUS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <style>
+        body{
+            margin:0;
+            padding:20px;
+            font-family: sans-serif;
+            background-color: rgb(187, 184, 184);
+            color: rgb(7, 7, 7);
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .table{
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+        .table td, table th{
+            padding:12px 15px;
+            border: 2px solid gray;
+            text-align: center;
+            font-size: 15px;
+        }
+        .table th{
+            background-color: darkblue;
+            color:beige;
+        }
+        .table tbody tr:nth-child(even){
+            background-color: #f5f0f0;
+        }
+        .table tbody tr:nth-child(odd){
+            background-color: #fcf9f9;
+        }
+        .cap{
+            font-size: 20px;
+            color:black;
+            text-align: left;
+            padding-bottom: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        @media(max-width: 500px){
+            .table thead{
+                display: none;
+            }
+            .table, .table tbody, .table tr, .table td{
+                display: block;
+                width: 100%;
+            }
+            .table tr{
+                margin-bottom: right;
+                padding-left: 50%;
+                text-align: right;
+                position: relative;
+            }
+            .table td::before{
+                content:attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+    </style>
+    <table class="table">
+        <caption class="cap">Below is the list of the rooms and respective appliances:</caption>
+        <thead>
+            <th>Date/Time</th>
+            <th>Room No.</th>
+            <th>Fan</th>
+            <th>Light</th>
+        </thead>
+        <tbody>
+   <tr>
+    <td data-label="Date/Time">10 May 2022 03:15:29 PM</td>
+    <td data-label="Room No.">A-11</td><td bgcolor="#FF0000" data-label="Light">ON</td><td bgcolor="#00FF00"data-label="Fan">OFF</td></tr><tr>
+    <td data-label="Date/Time">10 May 2022 03:15:29 PM</td>
+    <td data-label="Room No.">A-12</td><td bgcolor="#FF0000" data-label="Light">ON</td><td bgcolor="#FF0000" data-label="Fan">ON</td></tr><tr>
+    <td data-label="Date/Time">10 May 2022 03:15:29 PM</td>
+    <td data-label="Room No.">A-13</td><td bgcolor="#00FF00" data-label="Light">OFF</td><td bgcolor="#00FF00"data-label="Fan">OFF</td></tr><tr>
+    <td data-label="Date/Time">10 May 2022 03:15:29 PM</td>
+    <td data-label="Room No.">A-14</td><td bgcolor="#00FF00" data-label="Light">OFF</td><td bgcolor="#00FF00"data-label="Fan">OFF</td></tr></tbody>
+    </table>
+</html>
